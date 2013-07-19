@@ -100,7 +100,13 @@
         It will not be rotated or scaled.
         
     -->
-    <div id="iwconfig" class="step" style="opacity: 1.0" data-x="0" data-y="0">
+    <div class="step hidden" id="title" style="vertical-align: top; text-align: center; height: 500px;" data-x="0" data-y="0">
+        <h1>WLAN</h1>
+        <p class="tiny footnote">Funktechnische Aufklärung oder sowas in der Art</p>
+        <p style="margin-top: 100px;" class="small">Felicitus</p>
+    </div>
+
+    <div id="iwconfig" class="step hidden" data-x="0" data-y="0">
         <pre>
 wlan0     IEEE 802.11bg  ESSID:"fbx-test"
           Mode:Managed  Frequency:2.412 GHz  Access Point: A0:F3:C1:57:2A:16
@@ -134,9 +140,9 @@ wlan0     <span class="border-red">IEEE 802.11bg</span>  ESSID:"fbx-test"
     </div>
 
     <div id="layer-2-protocols" class="step ing" data-x="-150" data-y="-120" data-scale="0.005" data-rotate="-90" style="text-align: center;">
-        <b>runs any ISO/OSI Layer3 protocol</b>
+        <b>runs any ISO/OSI Layer3 protocol</b><br/>
         <b class="ipv4">IPv4</b>
-        <b class="ipv6">IPv6</b>
+        <b class="ipv6">IPv6</b><br/>
         <b class="icmp">ICMP</b>
         <b class="ipx">IPX</b>
         <b class="igmp">IGMP</b>
@@ -620,6 +626,139 @@ wlan0     IEEE 802.11bg  ESSID:"fbx-test"
         <div class="substep"><p style="margin-left: 10px;" class="small">20dBm = 100mW<br/>30dBm = 1 Watt</p></div>
     </div>
 
+    <div class="step hidden" data-x="24.5" data-y="-68" data-scale="0.0025">
+        <p style="text-align: center;">EIRP<br/>
+        Equivalent isotropically radiated power</p>
+        <div style="text-align: center;"><br/>
+        <div class="substep">
+            <p class="small">Maximum EIRP at 2.4GHz in EU: 20dBm</p>
+        </div>
+        <div class="substep">
+            <p class="small">Set 20dBm at your router and break the law</p>
+        </div>
+        </div>
+    </div>
+
+    <div class="step hidden" data-x="24.5" data-y="-67" data-scale="0.0025">
+        Antennas<br/>
+
+        <p class="small">Gain measured in dBi<br/>
+            Work in send AND receive direction!
+
+        </p>
+    </div>
+
+    <div class="step hidden" data-x="24.5" data-y="-66" data-scale="0.0025" style="text-align: center;">
+        <img style="float: left;" src="assets/LaFonera_front_cutout_01.png" height="400"/>
+        <p style="margin-top: 50px;">
+        2dBi (Antenna)<br/>
+        +<br/>
+        20dBm (Router)<br/>
+        =<br/>
+        22dBm<br/>
+        </p>
+    </div>
+
+    <div class="step hidden" data-x="24.5" data-y="-65" data-scale="0.0025" style="text-align: center;">
+
+        <img style="border: 1px solid black;" src="assets/router-antenna-gain.png"/><br/>
+
+        <p>
+            Some routers have antenna gain support</p>
+        <p class="tiny">(and help you to stay within legal limits)</p>
+    </div>
+
+    <div class="step hidden" data-x="24.5" data-y="-64" data-scale="0.0025" style="text-align: center;">
+        <p>But most routers don't</p>
+        <p class="tiny">You need to calculate the legal TX power yourself. Including OpenWRT.</p>
+    </div>
+
+    <div class="step hidden" data-x="24.5" data-y="-62.5" data-scale="0.0025" style="text-align: center;">
+        <h1>How do I know my antenna's gain?</h1>
+        <div style="text-align: left" class="small">
+            <br/>
+        <ul>
+            <li>Router Datasheet</li>
+            <li>Estimate</li>
+            <li>Google Image Seach</li>
+        </ul>
+            <br/>
+            Once you know your antenna's gain, it's wise to label it.<br/><br/>
+            <img src="assets/wifi-antenna-gain.png" width="800"/>
+        </div>
+    </div>
+
+    <div class="step hidden" data-x="0" data-y="0">
+        <pre>
+wlan0     IEEE 802.11bg  ESSID:"fbx-test"
+          Mode:Managed  Frequency:2.412 GHz  Access Point: A0:F3:C1:57:2A:16
+          Bit Rate=48 Mb/s   Tx-Power=20 dBm
+          Retry  long limit:7   RTS thr:off   Fragment thr:off
+          Encryption key:off
+          Power Management:off
+          Link Quality=70/70  Signal level=-37 dBm
+          Rx invalid nwid:0  Rx invalid crypt:0  Rx invalid frag:0
+          Tx excessive retries:0  Invalid misc:95   Missed beacon:0
+        </pre>
+    </div>
+
+    <div class="step hidden" data-x="0" data-y="0">
+        <pre>
+wlan0     IEEE 802.11bg  ESSID:"fbx-test"
+          Mode:Managed  Frequency:2.412 GHz  Access Point: A0:F3:C1:57:2A:16
+          Bit Rate=48 Mb/s   Tx-Power=20 dBm
+          Retry  long limit:7   RTS thr:off   Fragment thr:off
+          Encryption key:off
+          Power Management:off
+          Link Quality=70/70  Signal level=<span class="border-red">-37 dBm</span>
+          Rx invalid nwid:0  Rx invalid crypt:0  Rx invalid frag:0
+          Tx excessive retries:0  Invalid misc:95   Missed beacon:0
+        </pre>
+    </div>
+
+    <div class="step hidden" data-x="24.5" data-y="-60" data-scale="0.0025" style="text-align: center;">
+        <h1>Receiver Sensitivity</h1>
+
+        <p class="small">
+        How good your router can "hear".<br/><br/>
+        Depends on modulation and bit rate and your router hardware.
+        </p>
+    </div>
+
+    <div class="step hidden" data-x="24.5" data-y="-58" data-scale="0.0025" style="text-align: center;">
+        <h1>Receiver Sensitivity</h1>
+        <p class="tiny" style="margin-top: 2em;">
+        <img src="assets/ubiquiti-bullet-m-rx-specs.png"/><br/>
+        Example: Ubiquiti Bullet M RX Sensitivity
+        </p>
+    </div>
+
+    <div class="step hidden" data-x="24.5" data-y="-56" data-scale="0.0025" style="text-align: center;">
+        <h1>Signal to Noise Ratio</h1>
+        <br/>
+        <div style="text-align: left" class="small">
+            <ul>
+                <li>EM noise is usually at around -90dB to -110dB<br/><small style="font-size: 20px;">(but only displayed by some drivers)</small></li>
+                <li>Signal Strength - Noise Level = Signal Margin</li>
+                <li>&gt; 40dB: excellent signal</li>
+                <li>&lt; 10dB: weak link</li>
+            </ul>
+            <br/>
+            Example:<br/> (-40dBm) - (-100dBm) = 60dB Signal Margin
+        </div>
+    </div>
+
+    <div class="step hidden" data-x="24.5" data-y="-56" data-scale="0.0025" style="text-align: center;">
+        <h1>Why does my device get disconnected with 20dB signal margin?</h1>
+
+        <div style="text-align: left;margin-top: 2em;" class="small">
+            <ul>
+                <li>Good signal margins required on both devices</li>
+                <li>Signal level shows only what's being received</li>
+            </ul>
+        </div>
+
+    </div>
     <!--
         
         So to make a summary of all the possible attributes used to position presentation steps, we have:

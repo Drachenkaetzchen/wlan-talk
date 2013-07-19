@@ -57,9 +57,7 @@ footer, header, hgroup, menu, nav, section {
 body {
     line-height: 1;
 }
-ol, ul {
-    list-style: none;
-}
+
 blockquote, q {
     quotes: none;
 }
@@ -169,6 +167,7 @@ a:focus {
     width: 900px;
     padding: 40px;
     margin: 20px auto;
+    text-align: center;
 
     -webkit-box-sizing: border-box;
     -moz-box-sizing:    border-box;
@@ -713,11 +712,11 @@ pre {
     font-size: 18px;
 }
 
-p.small {
+.small {
     font-size: 30px;
 }
 
-p.tiny {
+.tiny {
     font-size: 20px;
 }
 
@@ -730,19 +729,19 @@ p.tiny {
     -webkit-transform: rotate(-90deg);
     position: relative;
     top: -50px;
-    -webkit-transition-delay: 0.5s;
+    -webkit-transition-delay: 0.4s;
 }
 
 .ing.present .ipv4 {
     font-size: 290px;
-    -webkit-transition-delay: 0.5s;
+    -webkit-transition-delay: 0.9s;
 }
 
 .ing.present .icmp {
     font-size: 60px;
     margin-right: 20px;
     margin-left: 100px;
-    -webkit-transition-delay: 0.5s;
+    -webkit-transition-delay: 0.9s;
 }
 
 .ing.present .ipsec {
