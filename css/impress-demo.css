@@ -277,6 +277,9 @@ a:focus {
     transform:         translateZ(50px);
 }
 
+h1 {
+    margin-bottom: 30px;
+}
 #title .footnote {
     font-size: 32px;
 }
@@ -527,7 +530,6 @@ a:focus {
     cursor: pointer;
 }
 
-
 /*
     Now, when we have all the steps styled let's give users a hint how to navigate
     around the presentation.
@@ -570,34 +572,23 @@ a:focus {
     I know, it sounds complicated ... maybe it would be easier with the code?
 */
 
-.hint {
-    /*
-        We hide the hint until presentation is started and from browsers not supporting
-        impress.js, as they will have a linear scrollable view ...
-    */
-    display: none;
+.narration {
+    display: block;
 
-    /*
-        ... and give it some fixed position and nice styles.
-    */
     position: fixed;
     left: 0;
     right: 0;
-    bottom: 200px;
+    bottom: 100px;
+    height: 150px;
 
     background: rgba(0,0,0,0.5);
     color: #EEE;
-    text-align: center;
+    text-align: left;
 
-    font-size: 50px;
+    font-size: 20px;
     padding: 20px;
 
     z-index: 100;
-
-    /*
-        By default we don't want the hint to be visible, so we make it transparent ...
-    */
-    opacity: 0;
 
     /*
         ... and position it below the bottom of the screen (relative to it's fixed position)
@@ -618,11 +609,11 @@ a:focus {
 
         This way user will not see the hint moving down.
     */
-    -webkit-transition: opacity 1s, -webkit-transform 0.5s 1s;
-    -moz-transition:    opacity 1s,    -moz-transform 0.5s 1s;
-    -ms-transition:     opacity 1s,     -ms-transform 0.5s 1s;
-    -o-transition:      opacity 1s,      -o-transform 0.5s 1s;
-    transition:         opacity 1s,         transform 0.5s 1s;
+    -webkit-transition: opacity 1s, -webkit-transform 1.5s 1s;
+    -moz-transition:    opacity 1s,    -moz-transform 1.5s 1s;
+    -ms-transition:     opacity 1s,     -ms-transform 1.5s 1s;
+    -o-transition:      opacity 1s,      -o-transform 1.5s 1s;
+    transition:         opacity 1s,         transform 1.5s 1s;
 }
 
 /*
@@ -734,35 +725,35 @@ pre {
 
 .ing.present .ipv4 {
     font-size: 290px;
-    -webkit-transition-delay: 0.9s;
+    -webkit-transition-delay: 0.4s;
 }
 
 .ing.present .icmp {
     font-size: 60px;
     margin-right: 20px;
     margin-left: 100px;
-    -webkit-transition-delay: 0.9s;
+    -webkit-transition-delay: 0.4s;
 }
 
 .ing.present .ipsec {
     font-size: 60px;
     margin-left: 20px;margin-right: 100px;
-    -webkit-transition-delay: 0.5s;
+    -webkit-transition-delay: 0.4s;
 }
 
 .ing.present .ipx {
     font-size: 30px;
-    -webkit-transition-delay: 0.5s;
+    -webkit-transition-delay: 0.4s;
 }
 
 .ing.present .igmp {
     font-size: 30px;
-    -webkit-transition-delay: 0.5s;
+    -webkit-transition-delay: 0.4s;
 }
 
 .ing.present .egp {
     font-size: 30px;
-    -webkit-transition-delay: 0.5s;
+    -webkit-transition-delay: 0.4s;
 }
 
 .ing b {
@@ -791,5 +782,19 @@ td, th {
     padding-left: 14px;
     padding-right: 14px;
     font-size: 13px;
+}
+
+table.small td, table.small th {
+    padding-left: 14px;
+    padding-right: 14px;
+    font-size: 26px;
+}
+
+pre {
+    text-align: left;
+}
+
+.doubleUnderline {
+    border-bottom: double 6px;
 }
 
